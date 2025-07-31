@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Página SpeakData</title>
+</head>
+<body>
+  <h1>Dados Recebidos</h1>
+  <pre id="output">Carregando…</pre>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const data = params.get('speakData');
+
+    const out = document.getElementById('output');
+    if (data) {
+      out.textContent = data;
+    } else {
+      out.textContent = 'Nenhum speakData encontrado na URL.';
+    }
+  </script>
+</body>
+</html>
